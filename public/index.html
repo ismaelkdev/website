@@ -1,1 +1,452 @@
-<p> Hello World </p>
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-01-05 Sun 00:10 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The website index (and the publisher!)</title>
+<meta name="author" content="Ismael Khan" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+</head>
+<body>
+<div id="preamble" class="status">
+<link rel='stylesheet' type='text/css' href='assets/style.css'/>
+</div>
+<div id="content" class="content">
+<div id="welcome">
+<span style="font-size: 110%">
+My name is <b>Ismael Khan</b>.
+</span>
+<br>
+Welcome to my website.
+</div>
+
+<h4>About me</h4>
+I am a Science graduate, majored in Mathematics, from the University of Queensland.
+
+
+<p>
+At the moment, this webpage is quite bare&#x2026;
+</p>
+
+<p>
+However, I plan to begin publishing posts here soon!
+</p>
+
+<p>
+&#x2014;
+</p>
+
+<p>
+<i>Fun fact</i>, this page also doubles as the same <a href="#orge6f0834">"machinery"</a> I use to publish it into webpage.
+</p>
+
+
+
+<div style="height:1000px">
+</div>
+
+
+
+<div id="outline-container-orge6f0834" class="outline-2">
+<h2 id="orge6f0834"><span class="section-number-2">1.</span> The machinery</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+So, you have chosen to see how the sausage gets made&#x2026;
+</p>
+
+<p>
+Buckle up.
+</p>
+
+<p>
+&#x2014;
+</p>
+
+<p>
+This website is fairly simple.
+</p>
+
+<p>
+It's heavily inspired in design and principles to a <a href="https://jake-moss.com/#bootstrapping">friend of mine's website</a>.
+</p>
+
+<p>
+I've chunked up this space into the following three steps:
+</p>
+<ol class="org-ol">
+<li><b><b>Initialise all necessary variables and settings</b></b> for the HTML file generation</li>
+<li><b><b>Actually generate the HTML files</b></b> and have them go in the right spots</li>
+<li><b><b>Stage, commit and push the changes to the remote repo</b></b> so that they can be deployed to a webpage</li>
+</ol>
+</div>
+
+<div id="outline-container-org3d75431" class="outline-3">
+<h3 id="org3d75431"><span class="section-number-3">1.1.</span> Declaring necessary variables and stuff for generation and org-publish</h3>
+<div class="outline-text-3" id="text-1-1">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span class="org-keyword">defvar</span> <span class="org-variable-name">base-directory</span> (expand-file-name <span class="org-string">"~/projects/website/"</span>))
+(<span class="org-keyword">defvar</span> <span class="org-variable-name">public-directory</span> (file-name-concat base-directory <span class="org-string">"public"</span>))
+
+(<span class="org-keyword">setq</span> org-html-head-include-default-style t
+      org-html-preamble t
+      org-html-htmlize-output-type 'css
+      org-html-postamble t
+      )
+</pre>
+</div>
+</div>
+
+
+
+
+<div id="outline-container-orgd9b4527" class="outline-4">
+<h4 id="orgd9b4527"><span class="section-number-4">1.1.1.</span> the <code>org-publish-project-alist</code> variable</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<p>
+At the heart of using <code>org-publish</code> is the <code>org-publish-project-alist</code> variable.
+</p>
+
+<p>
+As the documentation of this variable specifies:
+</p>
+<blockquote>
+<p>
+Association list to control publishing behavior.
+</p>
+
+<p>
+Each element of the alist is a publishing project.  The car of
+each element is a string, uniquely identifying the project.  The
+cdr of each element is in one of the following forms:
+</p>
+
+<ol class="org-ol">
+<li><p>
+A well-formed property list with an even number of elements,
+alternating keys and values, specifying parameters for the
+publishing process.
+</p>
+
+<p>
+(:property value :property value &#x2026; )
+</p></li>
+
+<li><p>
+A meta-project definition, specifying of a list of
+sub-projects:
+</p>
+
+<p>
+(:components ("project-1" "project-2" &#x2026;))
+</p></li>
+</ol>
+</blockquote>
+
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span class="org-comment-delimiter">;; </span><span class="org-comment">in an effort to stop repeating myself that often</span>
+(<span class="org-keyword">defvar</span> <span class="org-variable-name">posts-kw</span> <span class="org-string">"posts"</span>)
+(<span class="org-keyword">defvar</span> <span class="org-variable-name">showcase-kw</span> <span class="org-string">"projects"</span>)
+(<span class="org-keyword">defvar</span> <span class="org-variable-name">assets-kw</span> <span class="org-string">"assets"</span>)
+
+(<span class="org-keyword">defvar</span> <span class="org-variable-name">public-assets-dir</span> (file-name-concat public-directory <span class="org-string">"assets"</span>))
+(<span class="org-keyword">defvar</span> <span class="org-variable-name">base-assets-dir</span> (file-name-concat base-directory <span class="org-string">"assets"</span>))
+
+(<span class="org-keyword">defvar</span> <span class="org-variable-name">public-posts-dir</span> (file-name-concat public-directory <span class="org-string">"posts"</span>))
+(<span class="org-keyword">defvar</span> <span class="org-variable-name">base-posts-dir</span> (file-name-concat base-directory <span class="org-string">"posts"</span>))
+
+(<span class="org-keyword">defvar</span> <span class="org-variable-name">public-showcase-dir</span> (file-name-concat public-posts-dir <span class="org-string">"showcase"</span>))
+(<span class="org-keyword">defvar</span> <span class="org-variable-name">base-showcase-dir</span> (file-name-concat base-posts-dir <span class="org-string">"showcase"</span>))
+
+(<span class="org-keyword">setq</span> org-publish-project-alist
+      `(
+        (<span class="org-string">"assets"</span>
+         <span class="org-builtin">:base-directory</span> ,base-assets-dir
+         <span class="org-builtin">:base-extension</span> <span class="org-string">"css</span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">|</span></span><span class="org-string">js</span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">|</span></span><span class="org-string">png</span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">|</span></span><span class="org-string">jpg</span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">|</span></span><span class="org-string">jpeg</span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">|</span></span><span class="org-string">gif</span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">|</span></span><span class="org-string">pdf</span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">|</span></span><span class="org-string">mp3</span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">|</span></span><span class="org-string">ogg</span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">|</span></span><span class="org-string">swf"</span>
+         <span class="org-builtin">:publishing-directory</span> ,public-assets-dir
+         <span class="org-builtin">:recursive</span> t
+         <span class="org-builtin">:publishing-function</span> org-publish-attachment)
+        (<span class="org-string">"posts"</span>
+         <span class="org-builtin">:base-directory</span> ,base-posts-dir
+         <span class="org-builtin">:inline-components</span> (<span class="org-string">"assets"</span>)
+         <span class="org-builtin">:base-extension</span> <span class="org-string">"org"</span>
+         <span class="org-builtin">:publishing-directory</span> ,public-posts-dir
+         <span class="org-builtin">:publishing-function</span> org-html-publish-to-html
+         <span class="org-builtin">:html-preamble</span> <span class="org-string">"&lt;link rel='</span><span class="org-string"><span class="org-constant">stylesheet</span></span><span class="org-string">' type='</span><span class="org-string"><span class="org-constant">text/css</span></span><span class="org-string">' href='</span><span class="org-string"><span class="org-constant">../assets/style.css</span></span><span class="org-string">'/&gt;"</span>
+         <span class="org-builtin">:html-postamble</span> ,(concat
+                           <span class="org-string">"&lt;p class=\"author\"&gt;%a&lt;/p&gt;"</span>
+                           <span class="org-string">"&lt;p class=\"author\"&gt;Date: %T&lt;/p&gt;"</span>
+                           <span class="org-string">"&lt;p class=\"author\"&gt;%c&lt;/p&gt;"</span>)
+         <span class="org-builtin">:headline-levels</span> 4
+         <span class="org-builtin">:auto-preamble</span> t)
+        (<span class="org-string">"showcase"</span>
+         <span class="org-builtin">:base-directory</span> ,base-showcase-dir
+         <span class="org-builtin">:base-extension</span> <span class="org-string">"org"</span>
+         <span class="org-builtin">:publishing-directory</span> ,public-showcase-dir
+         <span class="org-builtin">:publishing-function</span> org-html-publish-to-html
+         <span class="org-builtin">:html-preamble</span> <span class="org-string">"&lt;link rel='</span><span class="org-string"><span class="org-constant">stylesheet</span></span><span class="org-string">' type='</span><span class="org-string"><span class="org-constant">text/css</span></span><span class="org-string">' href='</span><span class="org-string"><span class="org-constant">../../assets/style.css</span></span><span class="org-string">'/&gt;"</span>
+         )
+        (<span class="org-string">"index"</span>
+         <span class="org-builtin">:base-directory</span> ,base-directory
+         <span class="org-builtin">:inline-components</span> (<span class="org-string">"posts"</span> <span class="org-string">"showcase"</span>)
+         <span class="org-builtin">:publishing-directory</span> ,public-directory
+         <span class="org-builtin">:publishing-function</span> org-html-publish-to-html
+         <span class="org-builtin">:html-preamble</span> <span class="org-string">"&lt;link rel='</span><span class="org-string"><span class="org-constant">stylesheet</span></span><span class="org-string">' type='</span><span class="org-string"><span class="org-constant">text/css</span></span><span class="org-string">' href='</span><span class="org-string"><span class="org-constant">assets/style.css</span></span><span class="org-string">'/&gt;"</span>
+         )
+        (<span class="org-string">"website"</span> <span class="org-builtin">:components</span> (<span class="org-string">"assets"</span> <span class="org-string">"posts"</span> <span class="org-string">"showcase"</span> <span class="org-string">"index"</span>))))
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga415f9f" class="outline-3">
+<h3 id="orga415f9f"><span class="section-number-3">1.2.</span> Actual generating the files</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Everything prior has been setting up the necessary pieces of what things go where, and how.
+</p>
+
+<p>
+Like setting up a railway track from one point to another.
+</p>
+
+<p>
+Now that all that has been specified, we can finally run a train across the track, generating our files.
+</p>
+
+<p>
+Since this process utilises <code>org-publish</code>, which does a lot of the heavy lifting, this part is small.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(org-publish <span class="org-string">"website"</span> t) <span class="org-comment-delimiter">;; </span><span class="org-comment">:)</span>
+</pre>
+</div>
+
+<p>
+Yeah&#x2026; that's it.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org17bab71" class="outline-3">
+<h3 id="org17bab71"><span class="section-number-3">1.3.</span> Pushing to the remote repo for deployment</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+I'm not exactly sure how I am going to plug this functionality into
+emacs, I know its absolutely possible.
+</p>
+
+<p>
+It might be a little overkill, as the process of staging, commiting
+and pushing to GitHub is atmost three lines in the command line.
+</p>
+
+<p>
+But we've come so far, might as well have emacs cross the finish line
+themselves, it shouldn't be too hard. Right?&#x2026;
+</p>
+
+<p>
+That's a job for a future me
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Ismael Khan (<a href="mailto:ismael@localhost.localdomain">ismael@localhost.localdomain</a>)</p>
+<p class="date">Date: </p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4.50 (<a href="https://orgmode.org">Org</a> mode 9.6.15)</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

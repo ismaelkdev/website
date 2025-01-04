@@ -1,0 +1,185 @@
+#+TITLE: The website index (and the publisher!)
+#+options: toc:nil title:nil
+
+#+begin_export html
+<div id="welcome">
+<span style="font-size: 110%">
+My name is <b>Ismael Khan</b>.
+</span>
+<br>
+Welcome to my website.
+</div>
+#+end_export
+
+#+begin_export html
+<h4>About me</h4>
+I am a Science graduate, majored in Mathematics, from the University of Queensland.
+
+#+end_export
+
+
+At the moment, this webpage is quite bare...
+
+However, I plan to begin publishing posts here soon!
+  
+---
+
+/Fun fact/, this page also doubles as the same [[The machinery]["machinery"]] I use to publish it into webpage.
+
+
+
+#+begin_export html
+<div style="height:1000px">
+</div>
+#+end_export
+
+
+
+* The machinery 
+So, you have chosen to see how the sausage gets made...
+
+Buckle up.
+
+---
+
+This website is fairly simple.
+
+It's heavily inspired in design and principles to a [[https://jake-moss.com/#bootstrapping][friend of mine's website]].
+
+I've chunked up this space into the following three steps:
+1. **Initialise all necessary variables and settings** for the HTML file generation 
+2. **Actually generate the HTML files** and have them go in the right spots
+3. **Stage, commit and push the changes to the remote repo** so that they can be deployed to a webpage
+
+** Declaring necessary variables and stuff for generation and org-publish
+#+BEGIN_SRC emacs-lisp
+  (defvar base-directory (expand-file-name "~/projects/website/"))
+  (defvar public-directory (file-name-concat base-directory "public"))
+
+  (setq org-html-head-include-default-style t
+	org-html-preamble t
+	org-html-htmlize-output-type 'css
+	org-html-postamble t
+	)
+#+END_SRC
+
+#+RESULTS:
+: t
+
+
+
+
+*** the ~org-publish-project-alist~ variable
+At the heart of using ~org-publish~ is the ~org-publish-project-alist~ variable.
+
+As the documentation of this variable specifies:
+#+BEGIN_QUOTE
+Association list to control publishing behavior.
+
+Each element of the alist is a publishing project.  The car of
+each element is a string, uniquely identifying the project.  The
+cdr of each element is in one of the following forms:
+
+1. A well-formed property list with an even number of elements,
+   alternating keys and values, specifying parameters for the
+   publishing process.
+
+     (:property value :property value ... )
+
+2. A meta-project definition, specifying of a list of
+   sub-projects:
+
+     (:components ("project-1" "project-2" ...))
+#+END_QUOTE
+
+
+#+BEGIN_SRC emacs-lisp :eval yes
+  ;; in an effort to stop repeating myself that often
+  (defvar posts-kw "posts")
+  (defvar showcase-kw "projects")
+  (defvar assets-kw "assets")
+
+  (defvar public-assets-dir (file-name-concat public-directory "assets"))
+  (defvar base-assets-dir (file-name-concat base-directory "assets"))
+
+  (defvar public-posts-dir (file-name-concat public-directory "posts"))
+  (defvar base-posts-dir (file-name-concat base-directory "posts"))
+
+  (defvar public-showcase-dir (file-name-concat public-posts-dir "showcase"))
+  (defvar base-showcase-dir (file-name-concat base-posts-dir "showcase"))
+
+  (setq org-publish-project-alist
+	`(
+	  ("assets"
+	   :base-directory ,base-assets-dir
+	   :base-extension "css\\|js\\|png\\|jpg\\|jpeg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
+	   :publishing-directory ,public-assets-dir
+	   :recursive t
+	   :publishing-function org-publish-attachment)
+	  ("posts"
+	   :base-directory ,base-posts-dir
+	   :inline-components ("assets")
+	   :base-extension "org"
+	   :publishing-directory ,public-posts-dir
+	   :publishing-function org-html-publish-to-html
+	   :html-preamble "<link rel='stylesheet' type='text/css' href='../assets/style.css'/>"
+	   :html-postamble ,(concat
+			     "<p class=\"author\">%a</p>"
+			     "<p class=\"author\">Date: %T</p>"
+			     "<p class=\"author\">%c</p>")
+	   :headline-levels 4
+	   :auto-preamble t)
+	  ("showcase"
+	   :base-directory ,base-showcase-dir
+	   :base-extension "org"
+	   :publishing-directory ,public-showcase-dir
+	   :publishing-function org-html-publish-to-html
+	   :html-preamble "<link rel='stylesheet' type='text/css' href='../../assets/style.css'/>"
+	   )
+	  ("index"
+	   :base-directory ,base-directory
+	   :inline-components ("posts" "showcase")
+	   :publishing-directory ,public-directory
+	   :publishing-function org-html-publish-to-html
+	   :html-preamble "<link rel='stylesheet' type='text/css' href='assets/style.css'/>"
+	   )
+	  ("website" :components ("assets" "posts" "showcase" "index"))))
+#+END_SRC
+
+#+RESULTS:
+| assets   | :base-directory | /home/ismael/projects/website/assets         | :base-extension    | css\             | js\                   | png\                                                | jpg\                  | jpeg\                                      | gif\                 | pdf\                                                                   | mp3\           | ogg\                                                                | swf             | :publishing-directory                                                          | /home/ismael/projects/website/public/assets | :recursive | t              | :publishing-function | org-publish-attachment |
+| posts    | :base-directory | /home/ismael/projects/website/posts          | :inline-components | (assets)         | :base-extension       | org                                                 | :publishing-directory | /home/ismael/projects/website/public/posts | :publishing-function | org-html-publish-to-html                                               | :html-preamble | <link rel='stylesheet' type='text/css' href='../assets/style.css'/> | :html-postamble | <p class="author">%a</p><p class="author">Date: %T</p><p class="author">%c</p> | :headline-levels                            |          4 | :auto-preamble | t                    |                        |
+| showcase | :base-directory | /home/ismael/projects/website/posts/showcase | :base-extension    | org              | :publishing-directory | /home/ismael/projects/website/public/posts/showcase | :publishing-function  | org-html-publish-to-html                   | :html-preamble       | <link rel='stylesheet' type='text/css' href='../../assets/style.css'/> |                |                                                                     |                 |                                                                                |                                             |            |                |                      |                        |
+| index    | :base-directory | /home/ismael/projects/website/               | :inline-components | (posts showcase) | :publishing-directory | /home/ismael/projects/website/public                | :publishing-function  | org-html-publish-to-html                   | :html-preamble       | <link rel='stylesheet' type='text/css' href='assets/style.css'/>       |                |                                                                     |                 |                                                                                |                                             |            |                |                      |                        |
+| website  | :components     | (assets posts showcase index)                |                    |                  |                       |                                                     |                       |                                            |                      |                                                                        |                |                                                                     |                 |                                                                                |                                             |            |                |                      |                        |
+
+** Actual generating the files
+Everything prior has been setting up the necessary pieces of what things go where, and how.
+
+Like setting up a railway track from one point to another.
+
+Now that all that has been specified, we can finally run a train across the track, generating our files.
+
+Since this process utilises ~org-publish~, which does a lot of the heavy lifting, this part is small.
+
+#+BEGIN_SRC emacs-lisp
+  (org-publish "website" t) ;; :)
+#+END_SRC
+
+#+RESULTS:
+
+Yeah... that's it.
+
+** Pushing to the remote repo for deployment
+I'm not exactly sure how I am going to plug this functionality into
+emacs, I know its absolutely possible.
+
+It might be a little overkill, as the process of staging, commiting
+and pushing to GitHub is atmost three lines in the command line.
+
+But we've come so far, might as well have emacs cross the finish line
+themselves, it shouldn't be too hard. Right?...
+
+That's a job for a future me
+ 
+  
