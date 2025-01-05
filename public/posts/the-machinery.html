@@ -1148,7 +1148,7 @@ a:hover {
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-01-05 Sun 22:56 -->
+<!-- 2025-01-05 Sun 23:02 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>The machinery</title>
@@ -1423,13 +1423,8 @@ I've chunked up this space into the following three steps:
 </ol>
 
 
-<pre class="example">
-org-babel-execute:css
-</pre>
-
-
-<div id="outline-container-org02d74f0" class="outline-2">
-<h2 id="org02d74f0"><span class="section-number-2">1.</span> Style definitions</h2>
+<div id="outline-container-org11ecbb4" class="outline-2">
+<h2 id="org11ecbb4"><span class="section-number-2">1.</span> Style definitions</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 All CSS used in this website (the <i>stylesheet</i>) is also self-contained in this page.
@@ -1472,7 +1467,7 @@ little long, so I've hidden it with the option to show/hide it.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-css" id="org2983b76"><span class="org-comment-delimiter">/* </span><span class="org-comment">Import Merriweather font</span><span class="org-comment-delimiter"> */</span>
+<pre class="src src-css" id="org807d602"><span class="org-comment-delimiter">/* </span><span class="org-comment">Import Merriweather font</span><span class="org-comment-delimiter"> */</span>
 <span class="org-builtin">@import</span> url(<span class="org-string">'https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&amp;display=swap'</span>);
 
 <span class="org-css-selector">body</span> {
@@ -2620,8 +2615,8 @@ little long, so I've hidden it with the option to show/hide it.
 </div>
 </div>
 
-<div id="outline-container-org74e87ba" class="outline-2">
-<h2 id="org74e87ba"><span class="section-number-2">2.</span> Declaring necessary variables and stuff for generation and org-publish</h2>
+<div id="outline-container-org286fec7" class="outline-2">
+<h2 id="org286fec7"><span class="section-number-2">2.</span> Declaring necessary variables and stuff for generation and org-publish</h2>
 <div class="outline-text-2" id="text-2">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span class="org-keyword">defvar</span> <span class="org-variable-name">base-directory</span> (expand-file-name <span class="org-string">"~/projects/website/"</span>))
@@ -2638,8 +2633,8 @@ little long, so I've hidden it with the option to show/hide it.
 
 
 
-<div id="outline-container-org145f3f0" class="outline-3">
-<h3 id="org145f3f0"><span class="section-number-3">2.1.</span> the <code>org-publish-project-alist</code> variable</h3>
+<div id="outline-container-org94356c4" class="outline-3">
+<h3 id="org94356c4"><span class="section-number-3">2.1.</span> the <code>org-publish-project-alist</code> variable</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 At the heart of using <code>org-publish</code> is the <code>org-publish-project-alist</code> variable.
@@ -2739,8 +2734,8 @@ sub-projects:
 </div>
 </div>
 
-<div id="outline-container-org531be71" class="outline-2">
-<h2 id="org531be71"><span class="section-number-2">3.</span> Actual generating the files</h2>
+<div id="outline-container-orgbbf16ad" class="outline-2">
+<h2 id="orgbbf16ad"><span class="section-number-2">3.</span> Actual generating the files</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Everything prior has been setting up the necessary pieces of what things go where, and how.
@@ -2769,8 +2764,8 @@ Yeah&#x2026; that's it.
 </div>
 </div>
 
-<div id="outline-container-org6e95c87" class="outline-2">
-<h2 id="org6e95c87"><span class="section-number-2">4.</span> Pushing to the remote repo for deployment</h2>
+<div id="outline-container-org7d180ce" class="outline-2">
+<h2 id="org7d180ce"><span class="section-number-2">4.</span> Pushing to the remote repo for deployment</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 I'm not exactly sure how I am going to plug this functionality into
@@ -2804,8 +2799,8 @@ this entire webpage is self-sustained in this single file.
 </div>
 </div>
 
-<div id="outline-container-org1ddc4b5" class="outline-2">
-<h2 id="org1ddc4b5"><span class="section-number-2">5.</span> Exporting posts to their own html files</h2>
+<div id="outline-container-org6dfb1c6" class="outline-2">
+<h2 id="org6dfb1c6"><span class="section-number-2">5.</span> Exporting posts to their own html files</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 Though this is a "mono-page" (all posts are actually present in this
@@ -2923,8 +2918,8 @@ Below actually executes the function and puts things in the right spot:
 </div>
 </div>
 
-<div id="outline-container-orgaac9c70" class="outline-2">
-<h2 id="orgaac9c70"><span class="section-number-2">6.</span> Accessing the narrowed subpages from the mono-page</h2>
+<div id="outline-container-org798419d" class="outline-2">
+<h2 id="org798419d"><span class="section-number-2">6.</span> Accessing the narrowed subpages from the mono-page</h2>
 </div>
 </div>
 <div id="postamble" class="status">

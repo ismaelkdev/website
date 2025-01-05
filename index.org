@@ -137,10 +137,6 @@ I've chunked up this space into the following three steps:
 3. **Stage, commit and push the changes to the remote repo** so that they can be deployed to a webpage
 
 
-#+RESULTS:
-: org-babel-execute:css
-
-
 ** Style definitions
 All CSS used in this website (the /stylesheet/) is also self-contained in this page.
 
